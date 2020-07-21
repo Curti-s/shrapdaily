@@ -1,0 +1,75 @@
+@import "./variables", "./content";
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+:root {
+  --heavyWeight: 900;
+  --transMed: 0.3s;
+  --black: #111;
+  --primaryColor: #939393;
+}
+html {
+  min-height: 100vh;
+}
+
+body {
+  font-family: $sansSerif;
+  color: $black;
+  font-size: 1rem;
+  min-height: 100%;
+}
+
+.main-body {
+  padding: 6rem 2rem 1rem 2rem;
+  max-width: 1200px;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  min-height: calc(100vh - 8rem);
+}
+
+.nav-link {
+  font-weight: $heavyWeight;
+  list-style: none;
+  display: inline;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    -webkit-transition: $transMed;
+    transition: $transMed;
+    color: $black;
+    line-height: 1.75rem;
+
+    &:hover {
+      color: #939393;
+
+      &::after {
+        width: 0;
+        left: 100%;
+      }
+    }
+  }
+}
+
+.btn {
+  color: $black;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: $serif;
+  padding: 0;
+  font-size: 1rem;
+  display: inline-block;
+  line-height: 30px;
+  position: relative;
+
+  &-link {
+    text-decoration: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

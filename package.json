@@ -1,0 +1,78 @@
+{
+  "name": "bonneville",
+  "private": true,
+  "description": "A starter blog template for use with GatsbyJS",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "clean": "echo 'removing cache & public folder contents' && rm -rf .cache public/* && yarn cache clean",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "develop": "yarn run clean && gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "yarn run develop",
+    "serve": "gatsby serve",
+    "lint": "eslint ./src --max-warnings=0 --report-unused-disable-directives",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.22.9",
+    "gatsby-image": "^2.2.45",
+    "gatsby-plugin-google-analytics": "^2.1.13",
+    "gatsby-plugin-manifest": "^2.2.9",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
+    "gatsby-plugin-netlify-cms": "^4.3.3",
+    "gatsby-plugin-offline": "^2.2.10",
+    "gatsby-plugin-postcss": "^2.3.2",
+    "gatsby-plugin-purgecss": "^5.0.0",
+    "gatsby-plugin-react-helmet": "^3.1.24",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sass": "^2.1.12",
+    "gatsby-plugin-sharp": "^2.2.18",
+    "gatsby-plugin-sitemap": "^2.2.10",
+    "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-remark-images": "^3.1.19",
+    "gatsby-remark-relative-images": "^0.3.0",
+    "gatsby-source-cloudinary": "^0.1.14",
+    "gatsby-source-filesystem": "^2.1.18",
+    "gatsby-transformer-cloudinary": "^0.3.5",
+    "gatsby-transformer-remark": "^2.6.19",
+    "gatsby-transformer-sharp": "^2.2.12",
+    "minimist": "^1.2.5",
+    "netlify-cms-app": "^2.12.13",
+    "netlify-cms-media-library-cloudinary": "^1.3.4",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "react-markdown": "^4.3.1",
+    "serialize-javascript": "^2.1.2",
+    "styled-components": "^4.4.0",
+    "tailwindcss": "^1.4.6",
+    "typeface-ibm-plex-mono": "0.0.61",
+    "typeface-lato": "0.0.75",
+    "typeface-playfair-display": "0.0.72",
+    "typeface-roboto": "0.0.75"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^1.19.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/curti-s/bonneville"
+  },
+  "bugs": {
+    "url": "https://github.com/curti-s/bonneville/issues"
+  },
+  "resolutions": {
+    "sharp": "0.24.0"
+  }
+}

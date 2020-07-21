@@ -1,0 +1,136 @@
+backend:
+  name: git-gateway
+  branch: master
+
+site-url:  https://shrapdaily.netlify.com
+display-url:  https://shrapdaily.netlify.com
+
+publish_mode: editorial_workflow
+
+media_folder: static/img
+public_folder: /img
+
+media_library:
+  name: cloudinary
+  output_filename_only: true
+  config:
+    cloud_name: k1r1m1
+    api_key:149498775859558
+
+
+collections:
+  - name: "exclusive-premiers"
+    label: "Exclusive-premiers"
+    folder: "src/content/exclusive-premiers-posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "exclusive-premiers" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", dateFormat: 'YYYY-MM-DD', timeFormat: 'HH:mm', format: 'YYYY-MM-DD HH:mm' }
+      - { label: "Author", name: "author", widget: "object",
+          fields: [
+            { label: "Name", name: "name", widget: "string" },
+            { label: "Image", name: "image", widget: "image", media_library: { config: { folder: { path: { "shrapdaily/author_image" } } } } }
+          ]
+        }
+      - { label: "Socials", name: "socials", widget: "object",
+          fields: [
+            { label:"Instagram", name: "instagram", widget: "object",
+              fields: [
+                { label: "Link", name: "link", widget: "string"}
+              ]
+            },
+            { label:"Twitter", name: "twitter", widget: "object",
+              fields: [
+                { label: "Link", name: "link", widget: "string" }
+              ]
+            }
+          ]
+        }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", media_library: { config: { folder: { path: "shrapdaily/featured_image" }} } }
+      - { label: "Body", name: "body", widget: "markdown", hint: "main content goes here" }
+
+  - name: "interviews"
+    label: "Interviews"
+    folder: "src/content/interviews-posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "interviews" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", dateFormat: 'YYYY-MM-DD', timeFormat: 'HH:mm', format: 'YYYY-MM-DD HH:mm' }
+      - { label: "Author", name: "author", widget: "object",
+          fields: [
+            { label: "Name", name: "name", widget: "string" },
+            { label: "Image", name: "image", widget: "image", media_library: { config: { folder: { path: { "shrapdaily/author_image" } } } } }
+          ]
+        }
+      - { label: "Socials", name: "socials", widget: "object",
+          fields: [
+            { label:"Instagram", name: "instagram", widget: "object",
+              fields: [
+                { label: "Link", name: "link", widget: "string"}
+              ]
+            },
+            { label:"Twitter", name: "twitter", widget: "object",
+              fields: [
+                { label: "Link", name: "link", widget: "string" }
+              ]
+            }
+          ]
+        }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", media_library: { config: { folder: { path: "shrapdaily/featured_image" }} } }
+      - { label: "Body", name: "body", widget: "markdown", hint: "main content goes here" }
+
+  - name: "music-reviews"
+    label: "Music Reviews"
+    folder: "src/content/music-reviews-posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "music-reviews" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", dateFormat: 'YYYY-MM-DD', timeFormat: 'HH:mm', format: 'YYYY-MM-DD HH:mm' }
+      - { label: "Author", name: "author", widget: "object",
+          fields: [
+            { label: "Name", name: "name", widget: "string" },
+            { label: "Image", name: "image", widget: "image", media_library: { config: { folder: { path: { "shrapdaily/author_image" } } } } }
+          ]
+        }
+      - { label: "Socials", name: "socials", widget: "object",
+          fields: [
+            { label:"Instagram", name: "instagram", widget: "object",
+              fields: [
+                { label: "Link", name: "link", widget: "string"}
+              ]
+            },
+            { label:"Twitter", name: "twitter", widget: "object",
+              fields: [
+                { label: "Link", name: "link", widget: "string" }
+              ]
+            }
+          ]
+        }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", media_library: { config: { folder: { path: "shrapdaily/featured_image" }} } }
+      - { label: "Body", name: "body", widget: "markdown", hint: "main content goes here" }
+
+  - name: "Page"
+    label: "Pages"
+    editor:
+      preview: false
+    files:
+      - name: "about-page"
+        label: "About Page"
+        file: "src/pages/about-page/index.md"
+        fields:
+          - { label: "Content", name: "content", widget: "markdown", hint: "about page content goes here" }

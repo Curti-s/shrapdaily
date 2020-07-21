@@ -1,0 +1,6 @@
+static/img/ave-calvar-opitaaxfw18-unsplash.jpg filter=lfs diff=lfs merge=lfs -text
+static/img/david-todd-mccarty-a7lym8fj6wg-unsplash.jpg filter=lfs diff=lfs merge=lfs -text
+static/img/header_image.jpg filter=lfs diff=lfs merge=lfs -text
+static/img/kirimi_gray_scale.jpg filter=lfs diff=lfs merge=lfs -text
+static/img/* filter=lfs diff=lfs merge=lfs -text
+static/img/** filter=lfs diff=lfs merge=lfs -text
