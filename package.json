@@ -1,5 +1,5 @@
 {
-  "name": "bonneville",
+  "name": "shrapdaily",
   "private": true,
   "description": "A starter blog template for use with GatsbyJS",
   "version": "0.1.0",
@@ -67,10 +67,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/curti-s/bonneville"
+    "url": "https://github.com/curti-s/shrapdaily"
   },
   "bugs": {
-    "url": "https://github.com/curti-s/bonneville/issues"
+    "url": "https://github.com/curti-s/shrapdaily/issues"
   },
   "resolutions": {
     "sharp": "0.24.0"
