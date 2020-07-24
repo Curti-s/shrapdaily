@@ -15,7 +15,7 @@ media_library:
   output_filename_only: true
   config:
     cloud_name: k1r1m1
-    api_key: 149498775859558
+    api_key: '149498775859558'
 
 
 
