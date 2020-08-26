@@ -10,15 +10,6 @@ publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 
-media_library:
-  name: cloudinary
-  output_filename_only: true
-  config:
-    cloud_name: k1r1m1
-    api_key: '149498775859558'
-
-
-
 collections:
   - name: "exclusive-premiers"
     label: "Exclusive-premiers"

@@ -1,23 +1,6 @@
 const path = require('path');
-const { createFilePath, createRemoteFileNode } = require('gatsby-source-filesystem');
+const { createFilePath } = require('gatsby-source-filesystem');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
-
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-
-  createTypes(`
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-      featuredImage: File @link(from: "featuredImage___NODE")
-      authorImage: File @link(from: "frontmatter.author.image")
-    }
-    
-    type Frontmatter {
-      featuredImage: String
-      authorImage: String
-    }
-    `)
-}
 
 exports.onCreateNode = async ({ node, getNode, actions, cache, store, createNodeId }) => {
   const { createNodeField, createNode } = actions;
@@ -25,54 +8,11 @@ exports.onCreateNode = async ({ node, getNode, actions, cache, store, createNode
   // convert any absolute paths in markdown frontmatter data into relative paths if matching file is found
   fmImagesToRelative(node);
 
-  // create slugs for pages
+  // create slugs for markdown pages
   if (node.internal.type === 'MarkdownRemark') {
     const fileNode = getNode(node.parent);
     const slug = createFilePath({ node, getNode });
     createNodeField({ node, name: 'slug', value: slug });
-  }
-
-  // call createRemoteFileNode 
-  if (node.internal.type === 'CloudinaryMedia') {
-    const featuredImageRe = /shrapdaily\/featured_image\//;
-    const authorImageRe = /shrapdaily\/author_image\//;
-
-    let featuredImageFileNode;
-    let authorImageFileNode;
-    
-    if (featuredImageRe.test(node.public_id)) {
-      featuredImageFileNode = await createRemoteFileNode({
-        url: node.secure_url,
-        parentNodeId: node.id,
-        createNode,
-        createNodeId,
-        cache,
-        store,
-      });
-    } else {
-      featuredImageFileNode = undefined;
-    }
-
-    if (authorImageRe.test(node.public_id)) {
-      authorImageFileNode = await createRemoteFileNode({
-        url: node.secure_url,
-        parentNodeId: node.id,
-        createNode,
-        createNodeId,
-        cache,
-        store,
-      });
-    } else {
-      authorImageFileNode = undefined;
-    }
-
-    if (featuredImageFileNode) {
-      node.featuredImage___NODE = featuredImageFileNode.id;
-    }
-
-    if (authorImageFileNode) {
-      node.authorImage___NODE = authorImageFileNode.id;
-    }
   }
 };
 
@@ -99,7 +39,7 @@ exports.createPages = async ({ actions, graphql }) => {
     // Auto generate pages
 
   if (pageResult.errors) {
-    console.error(pageResult.errors);
+    console.error(pageResult.errors); // this error needs to be more descriptive
   }
 
   // create about page

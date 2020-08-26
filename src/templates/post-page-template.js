@@ -8,8 +8,8 @@ import Twitter from '../assets/twitter.svg';
 
 
 const PostPageTemplate = ({ page }) => {
-  const authorImage = page.authorImage;
-  const featuredImage = page.featuredImage;
+  const authorImage = page.frontmatter.author.image;
+  const featuredImage = page.frontmatter.featuredImage;
 
   return (
     <div className="container mx-auto h-full">

@@ -66,8 +66,8 @@ export const interviewsPageQuery = graphql`
           title
           author { name }
           description
+          featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
         }
-        featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
       }
     }
   }

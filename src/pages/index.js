@@ -57,8 +57,8 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD, YY")
             path
+            featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
           }
-          featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
           fields { slug }
           excerpt
         }
@@ -81,8 +81,8 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD, YY")
             path
+            featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
           }
-          featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
           fields { slug }
           excerpt
         }
@@ -105,8 +105,8 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD, YY")
             path
+            featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
           }
-          featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
           fields { slug }
           excerpt
         }

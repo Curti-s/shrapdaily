@@ -65,8 +65,8 @@ export const exclusivePremiersPageQuery = graphql`
           title
           author { name }
           description
+          featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
         }
-        featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } }  }
       }
     }
   }

@@ -18,10 +18,10 @@ const InterviewsPostPage = () => {
         }
         author {
           name
+          image { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } } }
         }
+        featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } } }
        }
-      featuredImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } } }
-      authorImage { childImageSharp { fluid { originalName ...GatsbyImageSharpFluid } } }
       html
       timeToRead
       fields {

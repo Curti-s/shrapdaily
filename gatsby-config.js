@@ -22,14 +22,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-        enableIdentityWidget: true,
-        htmlTitle: 'Content Manager',
-      }
-    },
     'gatsby-plugin-netlify-cache',
     {
       resolve: `gatsby-source-filesystem`,
@@ -84,25 +76,6 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`
-      }
-    },
-    {
-      resolve: `gatsby-source-cloudinary`,
-      options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        resourceType: 'image',
-        prefix: 'shrapdaily/'
-      }
-    },
-    {
-      resolve: 'gatsby-transformer-cloudinary',
-      options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        uploadFolder: 'shrapdaily'
       }
     },
     {
